@@ -1,0 +1,108 @@
+1. list : vector, deque와는 다르게 멤버 함수 에서 정렬(sort, merge), 이어붙이기(splice)가능
+1) 사용방법
+- 리스트 생성
+list<자료형> [변수이름](개수, 값);
+list<int> li; //빈 정수형 리스트 li를 생성
+list<int> li(5); //디폴트값이 0으로 초기화된 5개의 원소를 갖는 리스트 li 생성
+list<int> li(5,3);//3으로 초기화한 5개의 원소를 갖는 리스트 li 생성
+list<int> li{2,3,4,5};//특정값을 지정해 특정 공간을 갖는 리스트 li 생성
+
+- 자주 사용하는 함수
+>iterator(반복자)
+begin() : beginning iterator를 반환
+end() : end iterator를 반환
+
+>추가 및 삭제
+push_front(원소) : 리스트 제일 앞에 원소 추가
+pop_front() : 리스트 제일 앞에 원소 삭제
+
+push_back(원소) : 리스트 제일 뒤에 원소 추가
+pop_back() : 리스트 제일 뒤에 원소 삭제 
+
+insert(iterator, 원소) : iterator가 가리키는 부분의 앞에 원소 삽입
+erase(iterator) : iterator가 가리키는 부분의 앞에 원소 제거
+
+>조회
+*iterator : iterator가 가리키는 원소에 접근
+front() : 첫번째 원소를 반환
+back() : 마지막 원소를 반환
+
+>기타
+empty() : 리스트가 비어있는지 여부
+size() : 리스트 사이즈 반환
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+2. set : 유일한 원소만을 갖을 수 있는 구조로서 수학적으로 집합을 의미
+균형 이진 트리로 구현되어 빠른 시간으로 원소를 탐색할 수 있으며 이에 따라 탐색할 수 있도록 여러가지 탐색 함수를 제공해 준다.
+set의 기본정렬은 오르차순 set<int> s;, 내림차순시 set<int, greater<int>> s;
+1) 사용방법
+-set 생성
+set<T> : 원하는 자료형 및 클래스 T를 통해 생성
+
+- 자주 사용하는 함수
+>iterator(반복자)
+begin() : beginning iterator를 반환
+end() : end iterator를 반환
+
+>추가 및 삭제
+insert(원소) : 세트에 element를 추가
+erase(원소) : 세트에서 해당하는 element를 삭제
+clear(): 세트에 있는 모든 원소 삭제
+
+>조회
+find(원소) : element에 해당하는 iterator를 반환
+count(원소) : element에 해당하는 개수를 반환
+
+> 기타
+empty(): 비어있으면 true 아니면 false를 반환
+size(): 세트에 포함되어 있는 원소들의 수를 반환
+
+> 특징
+중복을 허용하지 않는다.
+중복을 허용하려면 multiset을 사용해야한다.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+3. map : <key, value> 쌍의 값들을 저장하는 구조(set과 유사)
+1) 사용방법
+-map 생성
+map< [Data type1], [Data type2] > [변수이름];
+map<int, int> m; //기본 선언 방법
+map<int> m(pred); //pred를 통해 정렬기준(오름,내림)을 정의
+map<int> m2(m1); // m1을 복사한 m2 를 생성합니다.
+
+- 자주 사용하는 함수
+>기본 형태
+map<key,value> : key와 value를 pair 형태로 선언합니다.
+
+>iterator(반복자)
+begin() : beginning iterator를 반환
+end() : end iterator를 반환
+
+>추가 및 삭제
+insert( make_pair(key,value) ) : 맵에 원소를 pair 형태로 추가
+[ ]를 사용하여 추가가능 => (map변수이름)[key] = value
+erase(key) : 맵에서 key(키값)에 해당하는 원소 삭제
+clear(): 맵의 원소들 모두 삭제
+
+>조회
+find(key) : key(키값)에 해당하는 iterator를 반환
+count(key) : key(키값)에 해당하는 원소들(value들)의 개수를 반환
+
+>기타
+empty(): 맵이 비어있으면 true 아니면 false를 반환
+size(): 맵 원소들의 수를 반환
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
